@@ -1,0 +1,5 @@
+https://github.com/firmai/financial-machine-learning
+
+https://github.com/aikorea/awesome-rl
+https://www.coursera.org/learn/reinforcement-learning-in-finance?action=enroll
+https://www.coursera.org/learn/reinforcement-learning-in-finance/lecture/ELQO0/introduction-to-rl-for-trading
