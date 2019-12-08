@@ -28,12 +28,17 @@ Termination State:
      
 Reward Structure: 
      -  0 for all States
-     - +1 for reaching Termination State T1
+     - +5 for reaching Termination State T1
      - -1 for reaching Termination State T2
      - +1/4 for reaching Temination State  T3
      - -1/2 for reaching Termination State T4
 
 """
+
+class Policy:
+    
+
+    
 
 class EnvStates:
     def __init__(self, name, number_of_previous_days, day_threshold):

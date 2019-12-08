@@ -21,6 +21,25 @@ import csv
 import codecs
 from datetime import datetime
 
+class RawDayData:
+    def __init__(self, instr, o, h, l, c, v, time_of_day):
+        self.instrument  = instr
+        self.date = time_of_day[0]
+        self.o = o
+        self.h = h
+        self.l = l
+        self.c = c
+        self.v = v
+        self.TOD = time_of_day
+    
+    def GetCloseData(self):
+        return self.TOD, o
+    
+    def GetEOD(self):
+        return self.o[-1]
+
+       
+
 def ImportData(file_name):
     print(__name__)
     data=[]
@@ -32,6 +51,7 @@ def ImportData(file_name):
         data.append(row)
     ndata = np.asarray(data)
     return data, ndata
+
 
 def ParseInput(data):
     #instr = data[:,0]
@@ -56,7 +76,7 @@ def ParseInput(data):
     for i in np.arange(count):
         s = date[i] +":" + time[i]
         dt = datetime.strptime(s, "%Y%m%d:%H:%M")
-        tt = np.append(tt, dt )
+        tt = np.append(tt, dt)
         
 
     return tt, time, o, h, l, c, v
