@@ -3,6 +3,7 @@
 Created on Sat Nov  9 20:57:59 2019
 
 @author: vyas
+version 1.1
 """
 
 """
@@ -33,17 +34,26 @@ class RawDayData:
         self.TOD = time_of_day
     
     def GetCloseData(self):
-        return self.TOD, o
+        return self.TOD, self.c
     
-    def GetEOD(self):
-        return self.o[-1]
-
+    def GetDayClose(self):
+        return self.c[-1]
+    
+    def GetDayOpen(self):
+        return self.o[0]
+    
+    def GetDayAvg(self):
+        return (self.o[0] + self.c[-1])/2
+    
+    def GetOpenData(self):
+        return self.TOD, self.o
+    
        
 
 def ImportData(file_name):
-    print(__name__)
+    #print(__name__)
     data=[]
-    print("Importing data....")
+    #print("Importing data....")
     
     f=codecs.open(file_name,"rb",encoding="ascii")
     csvread=csv.reader(f,delimiter=',')
